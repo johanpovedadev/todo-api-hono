@@ -1,21 +1,25 @@
 {
   "name": "todo-api-hono",
-  "module": "index.ts",
+  "version": "1.0.0",
+  "description": "API REST de tareas (To-Do) con Hono, Bun, SQLite y OpenAPI",
   "type": "module",
   "private": true,
   "scripts": {
-    "typecheck": "bun check"
-  },
-  "devDependencies": {
-    "@types/bun": "^1.4.3"
-  },
-  "peerDependencies": {
-    "typescript": "^7.0.2"
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun test --coverage"
   },
   "dependencies": {
     "@hono/swagger-ui": "^0.6.1",
     "@hono/zod-openapi": "^1.6.3",
     "hono": "^4.13.13",
     "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.3",
+    "typescript": "^7.0.2"
   }
 }

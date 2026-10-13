@@ -1,0 +1,7 @@
+#!/bin/sh
+# Bloquea el push si los tipos o las pruebas fallan.
+echo "pre-push: revisando tipos y pruebas..."
+bun run check || {
+  echo "pre-push: FALLÓ. Corrige antes de subir (no uses --no-verify)."
+  exit 1
+}
